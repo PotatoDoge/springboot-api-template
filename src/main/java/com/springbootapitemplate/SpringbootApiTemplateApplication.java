@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringbootApiTemplateApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootApiTemplateApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootApiTemplateApplication.class, args);
+    }
 
 }

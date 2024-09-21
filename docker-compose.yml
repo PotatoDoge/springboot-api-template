@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  api-template:
+    build: .
+    container_name: api-template
+    image: api-template
+    ports:
+      - "8084:8084"
+    environment:
+      - db-url=jdbc:postgresql://db:5432/central_database
+      - db-username=postgres
+      - db-password=postgres
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    ports:
+      - "5432:5432"
+    container_name: api-template-central-db
+    image: postgres:12
+    environment:
+      - POSTGRES_DB=central_database
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+    volumes:
+      - /var/lib/docker/volumes/api-template-volume/_data:/var/lib/postgresql/data
+    restart: always
+
+networks:
+  default:
+    name: app-api-template
+    external: true
