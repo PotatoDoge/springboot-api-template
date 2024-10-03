@@ -20,13 +20,19 @@ What you will need:
 Clone the project
 
 ```bash
-  git clone https://github.com/PotatoDoge/springboot-api-template.git
+  git clone --no-checkout https://github.com/PotatoDoge/springboot-api-template.git <your-repos-name>
 ```
 
 Go to project's directory
 
 ```bash
-  cd springboot-api-template
+  cd <your-repos-name>
+```
+
+Remove the remote
+
+```bash
+git remote remove origin
 ```
 
 Compile the project
